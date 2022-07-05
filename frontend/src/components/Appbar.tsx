@@ -19,7 +19,7 @@ function Appbar() {
   };
 
   return (
-    <AppBar sx={{ p: '5px 20px' }} position="static">
+    <AppBar sx={{ p: '5px 20px' }} position="sticky">
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography sx={{ fontWeight: 'bold' }} variant="h5">
           슈즈랜드

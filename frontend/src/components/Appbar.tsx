@@ -1,24 +1,12 @@
-import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
-import {
-  AppBar,
-  Avatar,
-  Menu,
-  MenuItem,
-  Stack,
-  Typography,
-  Link,
-  Box,
-  Tooltip,
-  IconButton,
-  ListItemIcon,
-} from "@mui/material";
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { AppBar, Avatar, Menu, MenuItem, Stack, Typography, Link, Box, Tooltip, IconButton, ListItemIcon } from '@mui/material';
 
-import { deepOrange } from "@mui/material/colors";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { deepOrange } from '@mui/material/colors';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 
 function Appbar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -31,21 +19,15 @@ function Appbar() {
   };
 
   return (
-    <AppBar sx={{ p: "5px 20px" }} position="static">
+    <AppBar sx={{ p: '5px 20px' }} position="static">
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography sx={{ fontWeight: "bold" }} variant="h5">
+        <Typography sx={{ fontWeight: 'bold' }} variant="h5">
           슈즈랜드
         </Typography>
-        <Box
-          sx={{ display: "flex", alignItems: "center", textAlign: "center" }}
-        >
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
           <Tooltip title="유저정보">
             <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-              <Avatar
-                sx={{ bgcolor: deepOrange[500] }}
-                alt="Remy Sharp"
-                src="/broken-image.jpg"
-              />
+              <Avatar sx={{ bgcolor: deepOrange[500] }} alt="Remy Sharp" src="/broken-image.jpg" />
             </IconButton>
           </Tooltip>
         </Box>
@@ -54,8 +36,8 @@ function Appbar() {
           open={open}
           onClose={handleClose}
           onClick={handleClose}
-          transformOrigin={{ horizontal: "right", vertical: "top" }}
-          anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
           <Link component={RouterLink} to="/dashboard">
             <MenuItem divider>

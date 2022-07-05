@@ -1,5 +1,5 @@
-import { blue } from "@mui/material/colors";
-import { createTheme } from "@mui/material/styles";
+import { blue } from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
@@ -14,8 +14,8 @@ const theme = createTheme({
   components: {
     MuiLink: {
       defaultProps: {
-        underline: "none",
-        color: "inherit",
+        underline: 'none',
+        color: 'inherit',
       },
     },
   },

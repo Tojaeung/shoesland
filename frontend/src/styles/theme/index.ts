@@ -1,20 +1,22 @@
 import { blue } from "@mui/material/colors";
-import { createTheme } from "@mui/system";
-
-export const colors = {
-  primary: blue[700],
-  secondary: blue[300],
-  white: "#fff",
-  black: "#000",
-};
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: colors.primary,
+      main: blue[700],
     },
     secondary: {
-      main: colors.secondary,
+      main: blue[200],
+    },
+  },
+
+  components: {
+    MuiLink: {
+      defaultProps: {
+        underline: "none",
+        color: "inherit",
+      },
     },
   },
 });

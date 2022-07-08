@@ -1,10 +1,15 @@
 package me.tojaeung.shoesland.exception;
 
+import org.springframework.http.HttpStatus;
+
 import lombok.*;
-import me.tojaeung.shoesland.enums.ErrorCode;
 
 @Getter
-@AllArgsConstructor
 public class CustomException extends RuntimeException {
-  private final ErrorCode errorCode;
+  private final HttpStatus httpStatus;
+
+  public CustomException(String message, HttpStatus httpStatus) {
+    super(message);
+    this.httpStatus = httpStatus;
+  }
 }

@@ -24,7 +24,7 @@ import me.tojaeung.shoesland.dto.Response;
 import me.tojaeung.shoesland.dto.request.MemberRequestDto;
 import me.tojaeung.shoesland.dto.response.MemberResponseDto;
 import me.tojaeung.shoesland.entity.Member;
-import me.tojaeung.shoesland.enums.ErrorCode;
+import me.tojaeung.shoesland.enums.ExceptionCode;
 import me.tojaeung.shoesland.exception.CustomException;
 import me.tojaeung.shoesland.jwt.TokenProvider;
 import me.tojaeung.shoesland.lib.Helper;
@@ -82,7 +82,7 @@ public class AuthController {
 
       Member member = memberRepository.findByEmail(memberEmail).orElse(null);
       if (member == null) {
-        throw new CustomException(ErrorCode.MISMATCH_REFRESH_TOKEN);
+        throw new CustomException(ExceptionCode.MISMATCH_REFRESH_TOKEN);
       }
 
       String accessToken = jwtTokenProvider.generateAccessToken(authentication);

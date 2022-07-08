@@ -1,14 +1,14 @@
 package me.tojaeung.shoesland.service;
 
-import me.tojaeung.shoesland.entity.Member;
 import me.tojaeung.shoesland.enums.Authority;
-import me.tojaeung.shoesland.enums.ErrorCode;
+import me.tojaeung.shoesland.enums.ExceptionCode;
 import me.tojaeung.shoesland.exception.CustomException;
 import me.tojaeung.shoesland.jwt.JwtFilter;
 import me.tojaeung.shoesland.jwt.TokenProvider;
 import me.tojaeung.shoesland.dto.Response;
 import me.tojaeung.shoesland.dto.request.MemberRequestDto;
 import me.tojaeung.shoesland.dto.response.MemberResponseDto;
+import me.tojaeung.shoesland.entity.Member;
 import me.tojaeung.shoesland.repository.MemberRepository;
 import me.tojaeung.shoesland.util.CookieUtil;
 import me.tojaeung.shoesland.util.SecurityUtil;
@@ -64,7 +64,7 @@ public class MemberService {
         Member member = MemberRepository.findByEmail(login.getEmail()).orElse(null);
 
         if (member == null) {
-            throw new CustomException(ErrorCode.MEMBER_NOT_FOUND);
+            throw new CustomException(ExceptionCode.MEMBER_NOT_FOUND);
         }
 
         // 1. Login ID/PW 를 기반으로 Authentication 객체 생성
